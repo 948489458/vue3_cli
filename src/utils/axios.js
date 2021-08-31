@@ -20,16 +20,17 @@ const AXIOS = {
             obj.data = obj.data || {};
             obj.headers = obj.headers || {
                 // 'Content-Type': 'application/json',
-                'Content-Type': 'application/json;charset=utf-8',
+                'token':'1231241324'
+                // 'Content-Type': 'application/json;charset=utf-8',
                 // 'Content-Type': 'application/x-www-form-urlencoded'
             };
             axios({
-                url: obj.configURL + obj.url,
-                method: obj.method,
-                headers: obj.headers,
-                params: obj.params,
-                data: obj.data
-            })
+                    url: obj.configURL + obj.url,
+                    method: obj.method,
+                    headers: obj.headers,
+                    params: obj.params,
+                    data: obj.data
+                })
                 .then(res => {
                     if (res.status === 200) {
                         resolve(res.data);

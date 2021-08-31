@@ -21,7 +21,6 @@ export default {
   },
   created() {
     this.$api.first.firstApi("111");
-    window.console.log("this.vuex", this.$store);
   },
 };
 </script>

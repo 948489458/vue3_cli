@@ -1,14 +1,13 @@
 /**
  * 首页相关api管理
  */
-import axios from '../../utils/axios'
+import axios from '../../utils/axios'//相当于axios.create
 import store from '../../store/index'
 
 
 //  /**
 //   * 修改默认请求配置文件
 //   */
-window.console.log(store.state.globalConfig)
 const axiosAPI = function (obj) {
     return axios({
         configURL: store.state.globalConfig.urlConfig,
