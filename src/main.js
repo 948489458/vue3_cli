@@ -10,7 +10,7 @@ import 'element-plus/dist/index.css'
 const app = createApp(App) 
 import axios from 'axios'
 
-app.config.globalProperties.$api=api//注入vue原型
+app.config.globalProperties.$api=api//全局挂载,注入vue原型
 
 async function init() {
     axios.get('../static/serverConfig.json?v='+ new Date().getTime()+'')

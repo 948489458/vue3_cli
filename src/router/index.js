@@ -18,7 +18,7 @@ const router = createRouter({
   history: createWebHashHistory(),//createWebHistory
   routes
 })
-//导航守卫
+//导航守卫 就是router跳转之前做什么
 router.beforeEach((to, from, next) => {
   window.console.log('我是导航守卫',to, from, next)
   next()
