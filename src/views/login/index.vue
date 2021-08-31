@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <p>我是登录页</p>
     <el-row>
       <el-button>默认按钮</el-button>
@@ -24,6 +24,10 @@ export default {
   },
 };
 </script>
-<style scoped >
-
+<style scoped lang="less">
+.app{
+  width: 1920*@vw;
+  height: 900*@vw;
+  background-color: rgba(228, 109, 228, 0.3);
+}
 </style>
