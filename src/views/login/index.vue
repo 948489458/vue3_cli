@@ -28,7 +28,7 @@ export default {
 .div{
   background-color: rgba(228, 109, 228, 0.3);
   p{
-    color: rgb(238, 25, 25);
+    color: rgb(64, 25, 238);
   }
 }
 </style>
