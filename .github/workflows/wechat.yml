@@ -1,38 +1,38 @@
-name: Send Wechat Bot Message Every 1 Minutes
+# name: Send Wechat Bot Message Every 1 Minutes
 
-# 触发条件
-on:
-  schedule:
-    - cron: "*/1 * * * *"   # 每1分钟执行，注意：UTC时间
-  workflow_dispatch:         # 支持手动触发
+# # 触发条件
+# on:
+#   schedule:
+#     - cron: "*/1 * * * *"   # 每1分钟执行，注意：UTC时间
+#   workflow_dispatch:         # 支持手动触发
 
-jobs:
-  send:
-    runs-on: ubuntu-latest
+# jobs:
+#   send:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Print current UTC and Beijing time
-        run: |
-          echo "UTC Time: $(date -u)"
-          echo "Beijing Time: $(date -u -d '+8 hour')"
+#     steps:
+#       - name: Print current UTC and Beijing time
+#         run: |
+#           echo "UTC Time: $(date -u)"
+#           echo "Beijing Time: $(date -u -d '+8 hour')"
 
-      - name: Send Message to Wechat Bot
-        run: |
-          echo "Sending message to Wechat Bot..."
-          RESPONSE=$(curl -s -w "%{http_code}" -o response.txt -X POST \
-            -H "Content-Type: application/json" \
-            -d '{"msgtype":"text","text":{"content":"订餐吗","mentioned_list":["@all"]}}' \
-            "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7e6a3ab3-f899-40fe-8357-f2a73e401b8c")
-          echo "HTTP Status Code: $RESPONSE"
-          echo "Response Body:"
-          cat response.txt
+#       - name: Send Message to Wechat Bot
+#         run: |
+#           echo "Sending message to Wechat Bot..."
+#           RESPONSE=$(curl -s -w "%{http_code}" -o response.txt -X POST \
+#             -H "Content-Type: application/json" \
+#             -d '{"msgtype":"text","text":{"content":"订餐吗","mentioned_list":["@all"]}}' \
+#             "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7e6a3ab3-f899-40fe-8357-f2a73e401b8c")
+#           echo "HTTP Status Code: $RESPONSE"
+#           echo "Response Body:"
+#           cat response.txt
 
-      - name: Check if message was sent successfully
-        run: |
-          if grep -q '"errcode":0' response.txt; then
-            echo "Message sent successfully ✅"
-          else
-            echo "Message failed ❌"
-            cat response.txt
-            exit 1
-          fi
+#       - name: Check if message was sent successfully
+#         run: |
+#           if grep -q '"errcode":0' response.txt; then
+#             echo "Message sent successfully ✅"
+#           else
+#             echo "Message failed ❌"
+#             cat response.txt
+#             exit 1
+#           fi
