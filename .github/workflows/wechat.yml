@@ -2,8 +2,8 @@ name: Send Wechat Bot Message Every 5 Minutes
 
 on:
   schedule:
-    - cron: "*/2 * * * *"   # 每5分钟执行
-  workflow_dispatch:         # 允许你手动运行
+    - cron: "*/2 * * * *"   # 每5分钟执行，注意是 UTC 时间
+  workflow_dispatch:         # 手动触发也可以
 
 jobs:
   send:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Send Message to Wechat Bot
         run: |
-          curl -X POST \
+          curl -v -X POST \
             -H "Content-Type: application/json" \
             -d '{"msgtype":"text","text":{"content":"订餐吗","mentioned_list":["@all"]}}' \
             "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7e6a3ab3-f899-40fe-8357-f2a73e401b8c"
