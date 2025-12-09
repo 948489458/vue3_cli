@@ -13,5 +13,5 @@ jobs:
         run: |
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{"msgtype":"text","text":{"content":"参数吗","mentioned_list":["@all"]}}' \
+            -d '{"msgtype":"text","text":{"content":"订餐吗","mentioned_list":["@all"]}}' \
             "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7e6a3ab3-f899-40fe-8357-f2a73e401b8c"
