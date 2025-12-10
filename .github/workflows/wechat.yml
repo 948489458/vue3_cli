@@ -2,7 +2,7 @@ name: Send Wechat Bot Message
 
 on:
   schedule:
-    - cron: "30 1 * * 1-5" # 每周一到周五 09:30（北京时间）
+    - cron: "0 1 * * 1-5" # 每周一到周五 09:00（北京时间）
   workflow_dispatch:
 
 jobs:
