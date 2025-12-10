@@ -14,4 +14,4 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -d '{"msgtype":"text","text":{"content":"订餐吗\n https://doc.weixin.qq.com/smartsheet/form/1_wp1CTQEAAAeQ_fBWckoFSHUPCxz8-rBg_7b4e27?journal_source=chat&version=5.0.2.6011&platform=win \n","mentioned_list":["@all"]}}' \
-            "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7e6a3ab3-f899-40fe-8357-f2a73e401b8c"
+            "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=1ffa2601-9c82-4cc2-8e6a-0bb450852a6a"
